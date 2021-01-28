@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const books = [
+                {
+                    title:'The HOBBIT',
+                    author:'J R TOLKIEN'
+                },
+
+                {
+                    title:'NECRONOMICON ',
+                    author:'HOWARD PHILLIPS LOVECRAFT'
+                },
+
+                {
+                    title:'DUNE',
+                    author:'FRANK HERBERT'
+                }
+
+            ];
+
+
+      const getTheTitles = function(array){
+     
+        return array.map(books => books.author)
+       
+        }
+       
+
+       getTheTitles(books);
+       
+     
+    </script>
+</body>
+</html>

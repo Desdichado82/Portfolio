@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dom basics </h1>
+    <div id="container">
+        <!--<button onclick="alert('Hello World')">Click me please</button>-->
+        <!--<button id="btn">Click me</button>-->
+        <button id="btn"> click me Baby</button>
+
+        <button id="1">Click me </button>
+        <button id="2">Click me </button>
+        <button id="3">Click me </button>
+
+    </div>
+    <script>
+        const container = document.querySelector('#container');
+
+        const content = document.createElement('p');
+        
+        const heading = document.createElement('h3');
+
+        const box = document.createElement("div");
+
+        const subHeader = document.createElement("h1");
+
+        const paragraph = document.createElement("p");
+
+        subHeader.textContent = "I am a div";
+        paragraph.textContent =" ME TOO!";
+
+        box.style.border ="black";
+        box.style.backgroundColor = "pink";
+
+        box.appendChild(subHeader);
+        box.appendChild(paragraph);
+
+        heading.style.color = "blue";
+        heading.textContent ="I'm a blue h3!";
+        heading.classList.add("title");
+
+        content.style.color = 'red';
+        content.textContent ="Hey I'm red";
+        content.classList.add('content');
+
+        container.appendChild(content);
+        container.appendChild(heading);
+        container.appendChild(box);
+       
+       // alert button method 2 
+
+       /*
+       const btn = document.querySelector("#btn");
+       btn.onclick =()=> alert("Hello World");
+        */
+
+        // alert method 3
+        /* const btn = document.querySelector('#btn');
+        btn.addEventListener('click',() =>{
+            alert("Hello World");
+        }); */
+
+
+ function alertFunction(){
+    alert('Yay! you did it!');
+} 
+
+// method 2 
+
+//btn.onclick = alertFunction;
+
+// btn.addEventListener('Click',alertFunction);
+
+btn.addEventListener('click',function(e){
+   e.target.style.background='blue';
+});
+
+
+// button is a node list. it looks like an array
+const buttons = document.querySelectorAll('button');
+
+// we use the .forEach method to iterate through each button
+
+buttons.forEach((button)=>{
+    // and for each one we add a 'click' listener
+    button.addEventListener('click',()=>{
+        alert(button.id);
+    });
+});
+        
+    </script>
+</body>
+</html>

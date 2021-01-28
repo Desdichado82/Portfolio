@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.css">
+    <title>Hello, world!</title>
+  </head>
+  <body class="container-fluid">
+      <style>
+
+:root {
+  --mainWhite: #f5f5f5f5;
+  --mainDark: #333333;
+  --mainGreen: #317b22;
+  --mainRed: #b80c09;
+  --mainBlue: #05668d;
+}
+        body{
+            font-family: 'Roboto' ;
+        }
+        .budget-feedback,
+        .expense-feedback{
+            display:none;
+        }
+
+
+        .showItem{
+            display:block;
+        }
+
+        .showRed{ color:red;}
+        .showGreen{color:lime;}
+        .showBlack{color:black;}
+
+        .edit-icon {
+  color: var(--mainBlue);
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none !important;
+}
+.delete-icon {
+  color: var(--mainRed);
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none !important;
+}
+.edit-icon:hover {
+  color: var(--mainBlue);
+}
+.delete-icon:hover {
+  color: var(--mainRed);
+}
+        </style>
+    <header class="m-2 p-2"><h1 class="text-center">Budget Application</h1></header>
+    <main class="container">
+        <section class="row">
+            <article class="col">
+                <div  id="box_one" class="border border-success m-3 p-2 rounded">
+                    <form id="budget-form">
+                         <!-- budget feedback -->
+                        <div class="budget-feedback alert alert-danger text-capitalize">budget feedback</div>
+                        <div class="form-group col-md-7">
+                                <label for="budget-input">Please Enter Your Budget</label>
+                                <input id="budget-input" class="form-control" type="number"/>    
+                        </div>
+                      
+                            
+                                <input type ="submit" id="budget-submit" class="btn btn-outline-success" value="calculate">
+                          
+                    </form>
+                  
+                </div>
+                <div  id="box_two"class="border border-danger m-3 p-2 rounded">
+                        <form id="expense-form">
+                                <div class="expense-feedback alert alert-danger text-capitalize">expense feedback</div>
+                            <div  class="form-group col-md-7">
+                                    <label>Please Enter Your Expense </label>
+                                    <input id="expense-input" class="form-control" type="text"/>
+                                  
+                                   
+                            </div> 
+                            <div  class="form-group col-md-7">
+                                    <label>Please Enter Your Expense Amount</label>
+                                    <input id="amount-input" class="form-control" type="number"/>
+                                   
+                            </div>
+                              <!-- expense feedback -->
+                       
+                            <input type ="submit" id="expense-submit" class="btn btn-outline-danger" value="add expense">
+                        </form>
+                </div>
+            </article>
+            <article class="col">
+                <div class="row">
+                    <div class="col">
+                        <h2>BUDGET</h2>
+                        <i class=""></i>
+                        <label id="budget-amount" class="text-success">$ </label>
+
+                    </div>
+                    <div class="col">
+                            <h2>EXPENSES</h2>
+                            <i class=""></i>
+                            <label id="expense-amount" class="text-danger">$ </label>
+                        </div>
+                        <div class="col">
+                                <h2>BALANCE</h2>
+                                <i class=""></i>
+                               <label id="balance-amount" class="">$ </label>
+        
+                        </div>
+                </div>
+                <div class="row" >
+                        <div class="col">
+                    <!-- expense list -->
+      <div class="expense-list" id="expense-list">
+
+        <div class="expense-list__info d-flex justify-content-between text-capitalize">
+         <h5 class="list-item">expense Fuck up</h5>
+         <h5 class="list-item">expense value</h5>
+         <h5 class="list-item"></h5>
+        </div>
+                       
+                </div>
+            </article>
+        </section>
+    </main>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="budget.js"></script>
+  </body>

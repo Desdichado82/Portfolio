@@ -94,7 +94,7 @@ section{
 }
 
 @supports(background-blend-mode:multiply){
-    .hero {background: url(../media/img/shoe-3.png),radial-gradient(#444, #111);
+    .hero {background: url(../img/shoe-3.png),radial-gradient(#444, #111);
     background-blend-mode:multiply;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -182,14 +182,14 @@ text-shadow:0 0 0.2em rgba(0,0,0,0.2);
     .product_image{
         float:right;
         width:65%;
-        shape-outside:url(../media/img/shoe-1.png);
+        shape-outside:url(../img/shoe-1.png);
         shape-margin:1em;
         margin: 0 -5em 0 0;
     }
 
     .product.shoe-left .product_image{
         float:left;
-        shape-outside:url(../media/img/shoe-2.png);
+        shape-outside:url(../img/shoe-2.png);
         margin:0 0 0 -5em;
         shape-margin:2em;
     }

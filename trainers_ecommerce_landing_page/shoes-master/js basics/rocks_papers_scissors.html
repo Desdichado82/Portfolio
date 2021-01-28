@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Step 1 : Declare and initialize our variables
+        let userSelection;
+        let comSelection;
+        const rock = "rock";
+        const paper = "paper";
+        const scissors = "scissors";
+        let round = 1;
+        let comScore = 0;
+        let userScore = 0;
+
+        // step 2 get the user input 
+        function getUserInput(){
+            // prompt the user to enter rock, paper or scissors
+             let answer = prompt("Please enter rock , paper or scissors", '');
+             // store the users answer in the userSelection variable and convert string to lowercase;
+             userSelection =answer.toLowerCase();
+           
+        }
+
+        function getComInput(){
+            // create a variable that holds an array of the choices  for the computer
+           let responce = [rock,paper,scissors];
+           //Use the inbuilt math functions to get a random choice from the array
+           // and store the value in the comSelection variable
+            comSelection = responce[Math.floor(Math.random() * responce.length)];
+            // display the computers choice to the user 
+           
+            console.log("computers answer ",comSelection);
+            alert("Computer selected : "+comSelection);
+        }
+// game logic 
+
+// using the round var and a while loop to inform the program how many rounds we want to play.
+ while(round < 6 ){
+// while round is less than six , keep looping through this code 
+    // we inform the user what the current round is .
+     console.log("round",round);
+     // we ask for the users input 
+     getUserInput();
+     // we  test and evaluate the users input before asking the computer for its input 
+     // using an if statement to evaluate we validate the uses choices are strictly the game words
+     if( userSelection == rock || userSelection == paper ||  userSelection == scissors){
+       // if the above is true then display the users input.
+        
+                console.log("users answer ",userSelection);
+                alert("You  selected : " + userSelection);
+                // get the computers input 
+                getComInput();
+                // increment the round variable by 1.
+                round++;
+               // if the above returns false execute the code in the else statement
+            }else{
+                // inform user that they need to enter the correct words.
+                console.log('You need to enter rock ,paper or scissors');
+                // prompt the user to reenter the correct word.
+                getUserInput();
+            }
+
+// here we evaluate the two player choices to decide who wins each round.
+// using if and else we run through each of the possible out comes 
+     if( userSelection == rock && comSelection == rock){
+         // if true  we output  the result of the round
+         // if its a draw the userscore and comscore are not incremented
+         //output message to the user
+        console.log('its a draw');
+        alert("Its A draw");
+       
+    }else if( userSelection == rock && comSelection == scissors){
+        // if true output message informing user has won
+        console.log('You win');
+        alert("You win !");
+        //increment user score by 1
+        userScore++;
+
+    }else if( userSelection == rock && comSelection == paper){
+        //if true output message to user 
+        console.log('You lose');
+        alert("You Lose !");
+        // increment computer score by 1.
+        comScore++;
+    }
+  // implement same evaluation and validation checks to all the possible outcomes 
+
+    if( userSelection == paper && comSelection == paper){
+        // if true  ouptut message to user 
+        console.log('its a draw');
+        alert("Its A draw");
+       
+    }else if( userSelection == paper && comSelection == rock){
+          // if true  ouptut message to user 
+        console.log('You win');
+        alert("You win !");
+         //increment variable by 1.
+        userScore++;
+    }else if( userSelection == paper && comSelection == scissors){
+          // if true  ouptut message to user 
+        console.log('You lose');
+        alert("You Lose !");
+         //increment variable by 1.
+        comScore++;
+    }
+ // implement same evaluation and validation checks to all the possible outcomes 
+    if( userSelection == scissors && comSelection == scissors){
+          // if true  ouptut message to user 
+        console.log('its a draw');
+        alert("Its A draw");
+       
+    }else if( userSelection == scissors && comSelection == paper){
+          // if true  ouptut message to user 
+        console.log('You win');
+        alert("You won !");
+         //increment variable by 1.
+        userScore++;
+    }else if( userSelection == scissors && comSelection == rock){
+          // if true  ouptut message to user 
+        console.log('You lose');
+        alert("You Lose !");
+        //increment variable by 1.
+        comScore++;
+    }
+    // at the end of each round output the current scores for user and computer 
+    console.log("Computer score : ",  comScore);
+    alert("Computer score : "+ comScore);
+    console.log("User score : ", userScore);
+    alert("User score : "+ userScore);
+   
+ // fucntion to decide the winner
+   function getWinner(){
+// evaluate who won the game 
+// if rounds equals six
+if(round === 6 || comScore === 3 || userScore == 3){
+        // check if user score is of a greater value  than comscore 
+     if(userScore > comScore){
+         // output message informing user that they have won and display final score.
+         console.log("User wins the game"," ","user score:",userScore);
+         alert("User wins the game"," ","user score:",userScore);
+         // evaluate if both scores are of equal value 
+     }else if(userScore === comScore){
+           // if true output message informing user that the game was a tie.
+        console.log("Its a draw this game"," ", "userscore:",userScore," ","Computer score: ",comScore);
+        alert("Its a draw this game"+" "+ "userscore:"+userScore+" "+"Computer score: "+comScore);
+     }else {
+         // else run this output message informing the user that the computer won and its final score
+        console.log("Computer wins the game"," ","Final Score : ",comScore);
+        alert("Computer wins the game"+" " + "Final Score : " + comScore);
+     }
+ }
+   }
+
+   getWinner();
+
+
+ }
+
+ 
+     
+         
+    </script>
+</body>
+</html>
